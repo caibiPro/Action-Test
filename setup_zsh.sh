@@ -25,6 +25,7 @@ backup_if_exits ~/.gitconfig
 if output=$(which omz); then
     echo "oh-my-zsh found, skip installation..."
 else
+    echo "$output"
     echo "oh-my-zsh didn't found, start to install..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi

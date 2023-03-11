@@ -56,11 +56,12 @@ fi
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     echo "MacOS..."
     # # Check for Homebrew and install if we don't have it
-    
+
     if output=$(which brew); then
         echo "brew found, skip installation..."
     else
-        echo "brew didn't find, start to install..."
+        echo "$output"
+        echo "brew didn't found, start to install..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         # Update Homebrew recipes
         /opt/homebrew/bin/brew update
